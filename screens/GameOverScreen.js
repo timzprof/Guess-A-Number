@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet, Button } from "react-native";
+import { View, Image, StyleSheet, Text } from "react-native";
 
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
@@ -19,7 +19,7 @@ const GameOverScreen = (props) => {
               "https://media.npr.org/assets/img/2014/07/17/clark-little-big-blue-1000-oahu-hawaii_custom-a6621d6bfe11ce7277b045c77bbcecefa19b6c1f-s800-c85.jpg",
           }}
           style={styles.image}
-          resizeMethod="contain"
+          resizeMode="cover"
         />
       </View>
       <View style={styles.resultContainer}>
@@ -29,7 +29,7 @@ const GameOverScreen = (props) => {
           <Text style={styles.highlight}>{props.userNo}</Text>
         </BodyText>
       </View>
-      <MainButton title="NEW GAME" onPress={props.onRestartGame} />
+      <MainButton onPress={props.onRestartGame}>NEW GAME</MainButton>
     </View>
   );
 };
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 300,
     borderRadius: 200,
-    borderWidth: 3,
+    borderWidth: 2,
     borderColor: "black",
     overflow: "hidden",
     marginVertical: 30,
